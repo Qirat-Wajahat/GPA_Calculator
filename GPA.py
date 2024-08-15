@@ -1,9 +1,10 @@
 # Program to calculate GPA for SMIU
 
 class Student:
-    def __init__(self, name, marks):
+    def __init__(self, name, marks,total_marks):
         self.name = name
         self.marks = marks
+        self.total_marks = total_marks
         
 
     def get_GPA(self):
@@ -11,7 +12,7 @@ class Student:
         sum = 0
         for val in self.marks: 
             sum += val
-        percentage = sum / 600 * 100
+        percentage = sum / self.total_marks * 100
         print("\nTotal Marks are:", sum)   
         print("\nPercentage is:", percentage, "%")    
         
@@ -40,13 +41,17 @@ class Student:
                 
 name = input("\nEnter Your Name: ")
 
-# enter exactly 7 marks
+no_of_subjects = int(input(f"\nOk {name}! Enter number of subjects: "))
+
+total_marks = int(input(f"\nNow {name}! Enter Total Marks: "))
+
+# enter exactly 'no_of_subjects' marks
 while True:
-    marks = [int(x) for x in input("\nEnter Your 7 Marks (Use 'Space Key' to separate values): ").split()]
-    if len(marks) == 7:
+    marks = [int(x) for x in input(f"\nEnter Your {no_of_subjects} Marks (Use 'Space Key' to separate values): ").split()]
+    if len(marks) == no_of_subjects:
         break
     else:
-        print("\nPlease enter exactly 7 marks.")
+        print(f"\nPlease enter exactly {no_of_subjects} marks.")
 
-s1 = Student(name, marks)                
+s1 = Student(name, marks,total_marks)                
 s1.get_GPA()
