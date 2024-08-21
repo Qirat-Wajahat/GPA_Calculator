@@ -12,32 +12,45 @@ class Student:
         sum = 0
         for val in self.marks: 
             sum += val
-        percentage = sum / self.total_marks * 100
+            percentage = round(sum / self.total_marks * 100)
+
         print("\nTotal Marks are:", sum)   
         print("\nPercentage is:", percentage, "%")    
         
         if percentage >= 91:
-            print("\nGrade is A+ \n\nGPA is 4.00\n")
+            grade = "A+"
+            gpa = 4.00
         elif percentage >= 80 and percentage <= 90:
-            print("\nGrade is A- \n\nGPA is 3.66\n")
+            grade = "A-"
+            gpa = 3.66
         elif percentage >= 75 and percentage <= 79:
-            print("\nGrade is B+ \n\nGPA is 3.33\n")
+            grade = "B+"
+            gpa = 3.33
         elif percentage >= 71 and percentage <= 74:
-            print("\nGrade is B \n\nGPA is 3.00\n")
+            grade = "B"
+            gpa = 3.00
         elif percentage >= 68 and percentage <= 70:
-            print("\nGrade is B- \n\nGPA is 2.66\n")
+            grade = "B-"
+            gpa = 2.66
         elif percentage >= 64 and percentage <= 67:
-            print("\nGrade is C+ \n\nGPA is 2.33\n")
+            grade = "C+"
+            gpa = 2.33
         elif percentage >= 61 and percentage <= 63:  
-            print("\nGrade is C \n\nGPA is 2.00\n")
+            grade = "C"
+            gpa = 2.00
         elif percentage >= 58 and percentage <= 60:
-            print("\nGrade is C- \n\nGPA is 1.66\n")
+            grade = "C-"
+            gpa = 1.66
         elif percentage >= 54 and percentage <= 57:
-            print("\nGrade is D+ \n\nGPA is 1.33\n") 
+            grade = "D+"
+            gpa = 1.33
         elif percentage >= 50 and percentage <= 53:
-            print("\nGrade is D \n\nGPA is 1.00\n")     
+            grade = "D"
+            gpa = 1.00
         else:
-            print("\nGrade is F \n\nGPA is 0.00\n")
+            grade = "F"
+            gpa = 0.00
+        print(f"\nGrade is {grade} \n\nGPA is {gpa}\n")
                 
 name = input("\nEnter Your Name: ")
 
